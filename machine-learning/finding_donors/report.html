@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>finding_donors</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>finding_donors</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11792,7 +11819,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11811,7 +11838,7 @@ div#notebook {
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;census.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Success - Display the first record</span>
-<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -11822,7 +11849,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -11862,6 +11891,74 @@ div#notebook {
       <td>0.0</td>
       <td>40.0</td>
       <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50</td>
+      <td>Self-emp-not-inc</td>
+      <td>Bachelors</td>
+      <td>13.0</td>
+      <td>Married-civ-spouse</td>
+      <td>Exec-managerial</td>
+      <td>Husband</td>
+      <td>White</td>
+      <td>Male</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>13.0</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>38</td>
+      <td>Private</td>
+      <td>HS-grad</td>
+      <td>9.0</td>
+      <td>Divorced</td>
+      <td>Handlers-cleaners</td>
+      <td>Not-in-family</td>
+      <td>White</td>
+      <td>Male</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>53</td>
+      <td>Private</td>
+      <td>11th</td>
+      <td>7.0</td>
+      <td>Married-civ-spouse</td>
+      <td>Handlers-cleaners</td>
+      <td>Husband</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28</td>
+      <td>Private</td>
+      <td>Bachelors</td>
+      <td>13.0</td>
+      <td>Married-civ-spouse</td>
+      <td>Prof-specialty</td>
+      <td>Wife</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>Cuba</td>
       <td>&lt;=50K</td>
     </tr>
   </tbody>
@@ -11924,7 +12021,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of records: 45222
 Individuals making more than $50,000: 11208
@@ -11981,7 +12080,9 @@ Percentage of individuals making more than $50,000: 24.78%
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -12513,7 +12614,9 @@ hkIIAAAAMDcUQgAAAIC58f8BSyVBLIWOQEgAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -13053,7 +13156,9 @@ AEBvaIQAAAAAvaERAgAAAPTG/wcZRvvcxpZZvAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -13186,7 +13291,9 @@ AEBvaIQAAAAAvaERAgAAAPTG/wcZRvvcxpZZvAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>103 total features after one-hot encoding.
 
@@ -13234,7 +13341,9 @@ AEBvaIQAAAAAvaERAgAAAPTG/wcZRvvcxpZZvAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training set has 36177 samples.
 Testing set has 9045 samples.
@@ -13322,7 +13431,9 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Naive Predictor: [Accuracy score: 24.7844, F-score: 0.2917]
 Naive Predictor: F-score: 0.2917
@@ -13381,6 +13492,7 @@ I based my selection of algorithms based on sklearn guide in this link <a href="
 <pre><code>Industry application: Classification of heart disease https://arxiv.org/pdf/1508.02061.pdf
 Strength: Perform well if training data is big
 Weakness: Slow prediction, Require storing the data.
+Why: The testing data is small. This will not slow down the prediction phase as KNN suffers from slow prediction and the cost of learning is constant(Udacity ML lectures). Also, KNN does not need assumptions about the underlying function to be learned (slide 19 http://www.cs.upc.edu/~bejar/apren/docum/trans/03d-algind-knn-eng.pdf). So, it will be a good baseline benchmark of the data.
 
 
 </code></pre>
@@ -13389,13 +13501,15 @@ Weakness: Slow prediction, Require storing the data.
 <pre><code>Industry application: Content based image retrieval https://arxiv.org/abs/1005.5437
 Strength: Use kernel trick
 Weakness: Slow training and prediction
+Why: The provided data is not very big. So, the slow nature of SVM will not slow down our experiments (Udacity ML lectures). SVM is good at dealing with non linear problems using the kernel trick (https://www.researchgate.net/post/When_we_use_Support_Vector_machine_for_Classification).
 
 </code></pre>
 <p>3- Ensemble methods(Gradient Boosting)</p>
 
 <pre><code>Industry application: Mobility predictions in Smart Cities http://www.mdpi.com/1424-8220/15/7/15974
 Strength: Works well with data of mixed types
-Weakness: Hard to parallelize </code></pre>
+Weakness: Hard to parallelize
+Why: Gradient Boosting perform very well with data of mixed types such as the data in this project. Also, Gradient Boosting is reliable in dealing with outliers, missing features values (https://bmcproc.biomedcentral.com/articles/10.1186/1753-6561-5-S3-S11).</code></pre>
 
 </div>
 </div>
@@ -13476,7 +13590,7 @@ In the code block below, you will need to implement the following:</p>
     <span class="n">results</span><span class="p">[</span><span class="s1">&#39;f_test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fbeta_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions_test</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
        
     <span class="c1"># Success</span>
-    <span class="k">print</span> <span class="s2">&quot;{} trained on {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">learner</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;{} trained on {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">learner</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">)</span>
         
     <span class="c1"># Return the results</span>
     <span class="k">return</span> <span class="n">results</span>
@@ -13533,7 +13647,7 @@ In the code block below, you will need to implement the following:</p>
 <span class="c1"># Collect results on the learners</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">clf_B</span><span class="p">,</span> <span class="n">clf_C</span><span class="p">]:</span>
-    <span class="n">clf_name</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="n">clf_name</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
     <span class="n">results</span><span class="p">[</span><span class="n">clf_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">samples</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">samples_1</span><span class="p">,</span> <span class="n">samples_10</span><span class="p">,</span> <span class="n">samples_100</span><span class="p">]):</span>
         <span class="n">results</span><span class="p">[</span><span class="n">clf_name</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> \
@@ -13551,7 +13665,9 @@ In the code block below, you will need to implement the following:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>KNeighborsClassifier trained on 361 samples.
 KNeighborsClassifier trained on 3617 samples.
@@ -13566,7 +13682,9 @@ GradientBoostingClassifier trained on 36177 samples.
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -14760,7 +14878,24 @@ SeoZFkIkSZIkSVLP+P8WNvbeoVNkrQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer:">Answer:<a class="anchor-link" href="#Answer:">&#182;</a></h3><p>Gradient Boosting algorithm is a tree based model. In simple words it is very similar to the Twenty Questions game. Where in this game we ask very broad question at first to eliminate a lot of possible answers and be specific at later questions. So this algorithm tries to come with a set of questions that best split the data to come to an answer. Practically, thre is no simple perfect solution. The idea of Gradient Boosting is to build many weak learners (trees) that perform very well on a subset of the data but perform poorly on the whole data. Then combine those learners into a single tree.</p>
+<h3 id="Answer:">Answer:<a class="anchor-link" href="#Answer:">&#182;</a></h3><p>Ensemble method Gradient Boosting algorithm is a tree based algorithm. Tree based means its working mechanisim like the 20 Questions Guessing Game. Boosting means combining the results from weak learners (1 tree is considered weak learner) together.</p>
+
+<pre><code>1- After the intial training using the training data, Gradient Boosting will build a set of small trees that describe the underlying unkown function of the data. 
+
+2- Each small tree is considered a weak learner that can find the solution to samples with specific features values.
+
+2- When predicting on test data, Gradient Boosting will generate answers from each of its weak learners.
+
+3- Gradient Boosting will combine these answers using the voting rule.
+
+4- The class label that get the majority of votes will be selected as the class label for the test sample.
+
+
+</code></pre>
+<p>My Answer is based on the following references
+1- <a href="https://www.analyticsvidhya.com/blog/2015/11/quick-introduction-boosting-algorithms-machine-learning/">https://www.analyticsvidhya.com/blog/2015/11/quick-introduction-boosting-algorithms-machine-learning/</a>
+2- <a href="https://www.quora.com/What-is-Gradient-Boosting-Models-and-Random-Forests-using-layman-terms">https://www.quora.com/What-is-Gradient-Boosting-Models-and-Random-Forests-using-layman-terms</a>
+3- <a href="https://www.quora.com/What-is-an-intuitive-explanation-of-Gradient-Boosting">https://www.quora.com/What-is-an-intuitive-explanation-of-Gradient-Boosting</a></p>
 
 </div>
 </div>
@@ -14841,7 +14976,9 @@ SeoZFkIkSZIkSVLP+P8WNvbeoVNkrQAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>fitting the object 
 
@@ -14997,7 +15134,9 @@ In our optimized model, we can see that the accuracy and F-beta score are enhanc
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -15529,7 +15668,8 @@ AElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer:">Answer:<a class="anchor-link" href="#Answer:">&#182;</a></h3><p>I have three features wrong comparing with feature importance. I said education-level as first feature but in the graph it is shown that education-num instead. However they are very close. I stated that age is the third important feature but in the graph it is shown as the second which mean it is very important in this dataset. I did not mention the martial-status or the capital-loss. I put capital-gain as the second important feature but it is shown that it is the last one in the graph.</p>
+<h3 id="Answer:">Answer:<a class="anchor-link" href="#Answer:">&#182;</a></h3><p>I have three features wrong comparing with feature importance. I said education-level as first feature but in the graph it is not shown. I stated that age is the third important feature but in the graph it is shown as the second which mean it is very important in this dataset. I put capital-gain as the second important feature but it is shown that it is the last one in the graph.</p>
+<p>I did not mention the features martial-status,capital-loss, or education-num. I think martial-status is releveant because if the person married then there is more than one income in the family. for capital-loss, it is relevant because it also another measure of the current financial status of the individual. If there is a lot of loss the charity will not be priority for the individual. For education-num, I think it is correlated with education-level but probably a better representation than education-level.</p>
 
 </div>
 </div>
@@ -15579,7 +15719,9 @@ AElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Final Model trained on full data
 ------
@@ -15634,4 +15776,8 @@ F-score on testing data: 0.7257
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
